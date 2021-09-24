@@ -1,12 +1,12 @@
 {
     "version": 2,
-    "name": "Eazao_zero",
+    "name": "Eazao Zero",
     "inherits": "fdmprinter",
     "metadata": 
   {
         "visible": true,
         "author": "Eazao",
-        "manufacturer": "Eazao Ltd.",
+        "manufacturer": "Eazao",
         "file_formats": "text/x-gcode",
         "has_materials": true,
         "has_machine_quality": true,
@@ -50,11 +50,11 @@
         },
         "machine_start_gcode":
         {
-            "default_value": ";Sliced at: { G21 \nG90 ;absolute positioning\nM82 ;set extruder to absolute mode\nM107\nG28 \nG1 Z15.0 F{speed_travel} ;move the platform down 15mm\nG92 E0 \nG1 F300 E10 ;extrude 10mm of feed stock\nG92 E0\nG1 Z5.0 F1500\nM302\nM163 S0 P0.9; Set Mix Factor\nM163 S1 P0.1; Set Mix Factor\nM164 S0\n"
+            "default_value": "G21 \nG90 ;absolute positioning\nM82 ;set extruder to absolute mode\nG28;Home \nG1 Z15.0 F1500 ;move the platform down 15mm\nG92 E0 \nG1 F300 E10\nG92 E0\nM302\nM163 S0 P0.9; Set Mix Factor\nM163 S1 P0.1; Set Mix Factor\nM164 S0\n"
         },
         "machine_end_gcode":
         {
-            "default_value": "M107\nG91 ;relative positioning\nG1 E-10 F300\nG1 Z+3 E-5  F{speed_travel} \nG28 X0 Y0;move X Y to min endstops\nG90 ;Absolute positioning\nM84 ;steppers off\n"
+            "default_value": "G92 E10\nG1 E-10 F300\nG28 X0 Y0;move X Y to min endstops\nM82\nM84 ;steppers off\n"
         },
         "machine_max_feedrate_x": { "value": 100 },
         "machine_max_feedrate_y": { "value": 100 },
@@ -78,13 +78,27 @@
         "jerk_travel_layer_0": { "value": "jerk_travel" },
         "jerk_enabled": { "value": false },
 
-        "speed_print": { "value": 20.0 },
-        "speed_z_hop": { "value": "machine_max_feedrate_z" },
-
+        "layer_height":{"value":1.0},
+        
+        "Wall Thickness":{"value":1.5},
         "optimize_wall_printing_order": { "value": "True" },
-        "material_initial_print_temperature": { "value": "0" },
+        "Compensate Wall Overlaps":{ "value": false},
+        
+        "Top/Bottom Thickness":{"value":0},
+
+        "Infill Density":{"value":0},
+
+        "Printing Temperature": { "value": "0" },
+        "Printing Temperature Initial Layer": { "value": "0" },
+         "material_initial_print_temperature": { "value": "0" },
         "material_final_print_temperature": { "value": "0" },
 
+        "speed_print": { "value": 20.0 },
+        "Wall Speed": { "value": 20.0 },
+        "Inner Wall Speed": { "value": 20.0 },
+        "Travel Speed": { "value": 20.0 },
+        "speed_z_hop": { "value": "machine_max_feedrate_z" },
+             
         "retraction_hop_enabled": { "value": "false" },
         "retraction_hop": { "value": 0.2 },
         "retraction_combing": { "default_value": "noskin" },
@@ -99,7 +113,11 @@
         "retraction_amount": { "value": 7 },
         "retraction_count_max": { "value": 100 },
         "retraction_extrusion_window": { "value": 10 },
-        "retraction_min_travel": { "value": 1.5 }
+        "retraction_min_travel": { "value": 3.0 },
+        
+        "Enable Print Cooling": { "value": false },
+        
+        "Build Plate Adhesion Type": { "default_value": "none" }
 
     }
 }
