@@ -87,8 +87,8 @@
         "travel_compensate_overlapping_walls_enabled": { "value": false},
         
         "top_bottom_thickness": {"value":0},
-        "bottom_layers":
-        "initial_bottom_layers":
+        "bottom_layers":{"value":2},
+        "initial_bottom_layers":{"value":2},
 
         "infill_sparse_density": {"value":0},
 
