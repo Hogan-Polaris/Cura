@@ -79,13 +79,16 @@
         "jerk_enabled": { "value": false },
 
         "layer_height": {"value":1.0},
-         "layer_height_0": {"value":1.0},
+        "layer_height_0": {"value":1.0},
+        "line_width": {"value":3.0},
         
-        "wall_thickness": {"value":1.5},
+        "wall_thickness": {"value":3.0},
         "optimize_wall_printing_order": { "value": "True" },
         "travel_compensate_overlapping_walls_enabled": { "value": false},
         
         "top_bottom_thickness": {"value":0},
+        "bottom_layers":
+        "initial_bottom_layers":
 
         "infill_sparse_density": {"value":0},
 
@@ -115,7 +118,6 @@
         "retraction_amount": { "value": 7 },
         "retraction_count_max": { "value": 100 },
         "retraction_extrusion_window": { "value": 10 },
-        "retraction_min_travel": { "value": 3.0 },
         
         "cool_fan_enabled": { "value": false },
         
